@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.ultraq.net.nz/thymeleaf/layout ">
+<head>
+    <meta charset="UTF-8">
+    <title>Region</title>
+    <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/plugins/datTables/datatables.css}"/>
+    <!--    <link rel="stylesheet" href="../static/assets/css/bootstrap.css">-->
+</head>
+
+
+<body>
+<h1 class="text-center text-danger">Region</h1>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#regionModal">+Add Region</button>
+
+<table id="regions" class="table table-bordered " >
+
+</table>
+
+<!-- Modal -->
+<div id="regionModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <form action="regionName">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Region</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <select id="countryId" class="form-control">
+                    <option value="0" selected disabled>Davlatlar</option>
+                </select>
+                <br>
+                <input type="text" class="form-control" id="regionName" name="name" placeholder="enter region name" required>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="saveRegion">save</button>
+            </div>
+        </div>
+        </form>
+    </div>
+
+
+
+</div>
+
+<div id="deleteModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" >Delete country</h3>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-success" id="deleteRegion">Yes</button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="regionEditModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <form action="regionName">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">edit Region</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <select id="countryIdEdit" class="form-control">
+                        <option value="0" selected disabled>Davlatlar</option>
+                    </select>
+                    <br>
+                    <input type="text" class="form-control" id="regionEditName" name="name" placeholder="enter region name" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="editRegion">save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+</div>
+
+
+<script th:src="@{/assets/bootstrap/js/jQuery.min.js}"></script>
+<script th:src="@{/assets/bootstrap/js/bootstrap.js}"></script>
+<script th:src="@{/assets/bootstrap/js/region.js}"></script>
+<script th:src="@{/assets/bootstrap/js/popper.js}"></script>
+<script th:src="@{/assets/plugins/datTables/datatables.js}"></script></body>
+</html>

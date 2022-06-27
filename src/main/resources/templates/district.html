@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.ultraq.net.nz/thymeleaf/layout ">
+<head>
+    <meta charset="UTF-8">
+    <title>District</title>
+    <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/assets/plugins/datTables/datatables.css}"/>
+    <!--    <link rel="stylesheet" href="../static/assets/css/bootstrap.css">-->
+</head>
+
+
+<body>
+<h1 class="text-center text-danger">District</h1>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#districtModal">+Add District</button>
+
+<table id="districts" class="table table-bordered " >
+
+</table>
+
+<!-- Modal -->
+<div id="districtModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <form action="districtName">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add District</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <select id="countryId" class="form-control">
+                    <option value="0" selected disabled>Davlatlar</option>
+                </select>
+                <br>
+                <select id="regionId" class="form-control">
+                    <option value="0" selected disabled>Viloyatlar</option>
+                </select>
+                <br>
+                <input type="text" class="form-control" id="districtName" name="name" placeholder="enter district name" required>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="saveDistrict">save</button>
+            </div>
+        </div>
+        </form>
+    </div>
+
+
+
+</div>
+
+<div id="deleteModal" class="modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" >Delete country</h3>
+                <button type="button" class="close" data-dismiss="modal">×</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                <button type="button" class="btn btn-success" id="deleteDistrict">Yes</button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="districtEditModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <form action="districtName">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">edit District</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <select id="countryIdEdit" class="form-control">
+                        <option value="0" selected disabled>Davlatni tanlang</option>
+                    </select>
+                    <br>
+                    <select id="regionIdEdit" class="form-control">
+                        <option value="0" selected disabled>viloyatni tanlang</option>
+                    </select>
+                    <br>
+                    <input type="text" class="form-control" id="districtEditName" name="name" placeholder="enter district name" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" id="editDistrict">save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
+</div>
+
+
+<script th:src="@{/assets/bootstrap/js/jQuery.min.js}"></script>
+<script th:src="@{/assets/bootstrap/js/bootstrap.js}"></script>
+<script th:src="@{/assets/bootstrap/js/district.js}"></script>
+<script th:src="@{/assets/bootstrap/js/popper.js}"></script>
+<script th:src="@{/assets/plugins/datTables/datatables.js}"></script></body>
+</html>

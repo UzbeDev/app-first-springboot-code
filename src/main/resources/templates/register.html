@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.ultraq.net.nz/thymeleaf/layout ">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.css}"/>
+</head>
+
+
+<body>
+
+<h1 class="text-center">Register</h1>
+<div class="container">
+    <form class="col-12" action="#" th:action="@{/auth/register}" th:object="${reqRegister}" method="post">
+        <div class="row">
+            <span class="text-danger" th:if="${#fields.hasErrors('firstName')} " th:errors="*{firstName}"></span>
+            <input type="text"
+                   style="width: 28%; margin: 6px 12px; height: 36px; outline: none"
+                   id="firstName"
+                   placeholder="enter your first name"
+                   th:field="*{firstName}"
+            >
+            <span class="text-danger" th:if="${#fields.hasErrors('lastName')} " th:errors="*{lastName}"></span>
+            <input type="text"
+                   style="width: 28%; margin: 6px 12px; height: 36px; outline: none"
+                   id="lastName"
+                   placeholder="enter your last name"
+                   th:field="*{lastName}"
+            >
+            <input type="text"
+                   style="width: 28%; margin: 6px 12px; height: 36px; outline: none"
+                   id="MiddleName"
+                   placeholder="enter your middle name"
+                   th:field="*{middleName}"
+            >
+        </div>
+        <div class="row">
+            <input type="text"
+                   style="width: 28%; margin: 6px 12px; height: 36px; outline: none"
+                   id="username"
+                   placeholder="enter your username name"
+                   th:field="*{username}"
+            >
+            <input type="text" style="width: 28%; margin: 6px 12px; height: 36px; outline: none"
+                   id="email"
+                   th:field="*{email}"
+                   placeholder="enter your email name"
+            >
+            <input type="date"
+                   style="width: 28%; margin: 6px 12px; height: 36px; outline: none"
+                   id="birthDate"
+                   th:field="*{birthDate}"
+                   placeholder="enter your birth date"
+            >
+        </div>
+        <div class="row">
+            <select name="countryId" id="countryId" style="width: 28%; margin: 6px 12px; height: 36px; outline: none">
+                <option value="0" disabled selected>Countryni tanlang</option>
+            </select>
+            <select name="regionId" id="regionId" style="width: 28%; margin: 6px 12px; height: 36px; outline: none">
+                <option value="0" disabled selected>Regionni tanlang</option>
+            </select>
+            <select name="districtId"
+                    id="districtId"
+                    th:field="*{districtId}"
+                    style="width: 28%; margin: 6px 12px; height: 36px; outline: none">
+                <option value="0" disabled selected>Districtni tanlang</option>
+            </select>
+        </div>
+        <div class="row">
+            <input type="text" th:field="*{street}" style="width: 28%; margin: 6px 12px; height: 36px; outline: none" id="street" placeholder="enter your street" >
+            <input type="text" th:field="*{zipCode}" style="width: 28%; margin: 6px 12px; height: 36px; outline: none" id="zipCode" placeholder="enter your zipCode" >
+            <input type="number" th:field="*{phoneNumber}" style="width: 28%; margin: 6px 12px; height: 36px; outline: none" id="phoneNumber" placeholder="enter your phone number" >
+        </div>
+        <div class="row">
+            <select name="gender" id="gender" style="width: 28%; margin: 6px 12px; height: 36px; outline: none"
+                    th:field="*{gender}">
+                <option value="0" disabled selected>jins tanlang</option>
+                <option value="MALE">MALE</option>
+                <option value="FEMALE">FEMALE</option>
+            </select>
+            <input type="password" th:field="*{password}" style="width: 28%; margin: 6px 12px; height: 36px; outline: none" id="password" placeholder="enter your password" >
+            <input type="password"  th:field="*{prePassword}"style="width: 28%; margin: 6px 12px; height: 36px; outline: none" id="prePassword" placeholder="enter your prePassword" >
+        </div>
+
+        <button class="btn btn-primary mr-2 btn-block" type="submit">Sign up</button>
+        <br>
+        <br>
+        <button class="btn btn-success btn-block"  type="submit"  ><a href="/auth/login">I have account</a></button>
+
+    </form>
+</div>
+
+
+
+
+
+
+<script th:src="@{/assets/bootstrap/js/jQuery.min.js}"></script>
+<script th:src="@{/assets/bootstrap/js/bootstrap.js}"></script>
+<script th:src="@{/assets/bootstrap/js/register.js}"></script>
+<script th:src="@{/assets/bootstrap/js/src/popover.js}"></script>
+</body>
+</html>

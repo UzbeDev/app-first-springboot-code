@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.ultraq.net.nz/thymeleaf/layout ">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.css}"/>
+</head>
+
+<body>
+<h1 class="text-center">Login</h1>
+<div class="container">
+    <div class="row col-md-9">
+        <input class="form-control mt-3" id="username" type="text" placeholder="Enter username" required>
+        <input class="form-control mt-3" id="password" type="password" placeholder="Enter password" required>
+    </div>
+    <div class="row">
+        <button class="btn btn-primary mr-2">Sign in</button>
+        <button class="btn btn-light"><a href="register ">Create account</a></button>
+    </div>
+</div>
+<script th:src="@{/assets/bootstrap/js/jQuery.min.js}"></script>
+<script th:src="@{/assets/bootstrap/js/bootstrap.js}"></script>
+<script th:src="@{/assets/bootstrap/js/region.js}"></script>
+<script th:src="@{/assets/bootstrap/js/popper.js}"></script>
+<script th:src="@{/assets/plugins/datTables/datatables.js}"></script></body>
+</body>
+</html>
